@@ -15,7 +15,7 @@ public class HandlerManager {
     public static void resolveMappingHandler(List<Class<?>> classList){
         // steam yyds！
         classList.stream()
-                .filter(aClass -> aClass.isAnnotationPresent(Controller.class))
+                .filter(aClass -> aClass.isAnnotationPresent(Controller.class))//过滤出所有有Controller注解的类
                 .forEach(HandlerManager::parseHandlerFromController);
     }
 

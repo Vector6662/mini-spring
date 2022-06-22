@@ -28,7 +28,7 @@ public class BeanFactory {
      * @param classes
      */
     public static void initBean(List<Class<?>> classes) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-        //根据以前编程的经验，这里仍然是浅拷贝，只是一些变量指向这些classes对象。
+        //这里仍然是值引用，只是一些变量指向这些classes对象的地址
         List<Class<?>> classesToCreate = new ArrayList<>(classes);
 
         //被@Aspect注解的切面类

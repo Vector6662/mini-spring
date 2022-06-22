@@ -1,5 +1,5 @@
 # 开发日志
-
+仿照大佬的项目：[仿写一个简陋的 IOC/AOP 框架 mini-spring](https://www.cnblogs.com/czwbig/p/11159946.html)
 #### 2021/5/14
 
 Servlet、Tomcat相关的jar包很折腾，毕竟它们是属于javaEE规范的，javaSE中并没有这些包。我尝试过用maven来添加servlet依赖，但是又发现Tomcat相关的类却不在jakarta.servlet包中，而是在org.apache.catalina包中，在maven远程仓库中却找不到。于是我直接导入了tomcat服务器目录下的lib目录下的所有jar包。具体做法是：

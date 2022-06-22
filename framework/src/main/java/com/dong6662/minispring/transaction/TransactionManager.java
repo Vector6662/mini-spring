@@ -16,15 +16,15 @@ public class TransactionManager {
         enhancer.setSuperclass(clazz);
         enhancer.setCallback((MethodInterceptor) (obj, method, args, proxy) -> {
             try {
-                beginTransaction();
+                beginTransaction();//关闭auto commit
                 Object o = proxy.invokeSuper(obj, args);
-                commit();
+                commit();//统一commit
                 return o;
             } catch (Throwable throwable) {
-                rollback();
+                rollback();//出错了就rollback
                 throw new Throwable(throwable);
             }finally {
-                release();
+                release();//不论成功还是失败，都得释放这个连接
             }
         });
         return enhancer.create();

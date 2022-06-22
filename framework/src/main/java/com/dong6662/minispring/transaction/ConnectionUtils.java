@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionUtils {
+    //居然还用到了ThreadLocal
     private static final ThreadLocal<Connection> tl = new ThreadLocal<>();
     private static final BasicDataSource basicDataSource = new BasicDataSource();
 
